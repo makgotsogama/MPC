@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Piece Consultants | Leading SEO Agency South Africa</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette derived directly from your logo gradient */
+        :root {
+            --primary-pink: #d83b73;
+            --primary-purple: #7b4397;
+            --primary-blue: #2b82c9;
+            --primary-orange: #f17a28;
+            --dark-bg: #1e1e24;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #ffffff;
+            --gradient-logo: linear-gradient(135deg, var(--primary-pink), var(--primary-purple), var(--primary-blue), var(--primary-orange));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation Header */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-logo);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Hero Splash Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(216,59,115,0.05), rgba(43,130,201,0.05));
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-logo);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-gradient {
+            background: var(--gradient-logo);
+            color: var(--text-light);
+            box-shadow: 0 4px 15px rgba(123, 67, 151, 0.3);
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 67, 151, 0.4);
+        }
+
+        /* Strategic Vision & Mission Cards */
+        .framework {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vision-card { border-left: 6px solid var(--primary-pink); }
+        .mission-card { border-left: 6px solid var(--primary-blue); }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .card p {
+            color: #4a5568;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Blog Preview Dynamic Grid */
+        .blog-section {
+            background: #f1f5f9;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-logo);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-post {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-3px);
+        }
+
+        .blog-badge {
+            background: rgba(43,130,201,0.1);
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .blog-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+
+        .blog-excerpt {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Seamless Modal Window for displaying whole blog logs */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-body {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #94a3b8;
+        }
+
+        .modal-text p {
+            margin-bottom: 15px;
+            color: #334155;
+            font-size: 1rem;
+        }
+
+        .modal-text h4 {
+            margin: 25px 0 12px;
+            color: #1e293b;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 5px;
+        }
+        
+        .modal-text ul, .modal-text ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+            color: #334155;
+        }
+
+        .modal-text li {
+            margin-bottom: 8px;
+        }
+
+        /* Dynamic Consultation Booking Section */
+        .booking-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .calendar-mockup {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .day-label { font-weight: 600; color: #94a3b8; font-size: 0.85rem;}
+
+        .day {
+            padding: 12px 0;
+            border-radius: 8px;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .day:hover:not(.empty) {
+            background: var(--primary-pink);
+            color: #fff;
+        }
+
+        .day.selected {
+            background: var(--primary-purple);
+            color: #fff;
+        }
+
+        /* Localized Corporate Contact Form Section */
+        .contact-section {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            padding: 80px 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 { font-size: 2.2rem; margin-bottom: 20px;}
+        .contact-info p { color: #94a3b8; margin-bottom: 30px;}
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .framework, .booking-grid, .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">Missing Piece Consultants</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">SEO Articles</a></li>
+                    <li><a href="#booking">Book Discovery Session</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Complete Your Digital Picture with <span>Innovative SEO Solutions</span></h1>
+            <p>Providing high-impact, data-driven optimization strategies to increase your visibility and customer reach across South Africa.</p>
+            <a href="#booking" class="btn btn-gradient">Book Strategy Session</a>
+        </div>
+    </section>
+
+    <section class="framework" id="about">
+        <div class="card vision-card">
+            <h2>Our Vision</h2>
+            <p>To build a strong reputation for effective SEO services and help more businesses increase their online visibility and customer reach as well as expanding our services and client base across South Africa to become a leading and trusted SEO consultancy in the digital marketing industry.</p>
+        </div>
+        <div class="card mission-card">
+            <h2>Our Mission</h2>
+            <p>Missing Piece Consultants is committed to providing innovative, data-driven SEO solutions that improve website visibility, increase organic traffic, and help businesses attract and retain customers. We aim to deliver personalised strategies that create measurable and long-term results for our clients.</p>
+        </div>
+    </section>
+
+    <section class="blog-section" id="blog">
+        <h2 class="section-title">Corporate SEO Intelligence</h2>
+        <div class="blog-container">
+            
+            <div class="blog-post">
+                <div class="blog-content">
+                    <span class="blog-badge">Foundations</span>
+                    <h3>What is SEO and why do all South African businesses need it?</h3>
+                    <p class="blog-excerpt">SEO (Search Engine Optimisation) involves enhancing a website's content, structure, and credibility to achieve better rankings...</p>
+                    <span class="read-more" onclick="openFullBlog(1)">Read Full Article →</span>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-content">
+                    <span class="blog-badge">Technical Diagnostics</span>
+                    <h3>Reasons why your website is not getting traffic and how to fix it</h3>
+                    <p class="blog-excerpt">Launching a website does not automatically bring visitors. Before a page can appear in Google, it needs to be crawled, rendered...</p>
+                    <span class="read-more" onclick="openFullBlog(2)">Read Full Article →</span>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-content">
+                    <span class="blog-badge">Next-Gen Search</span>
+                    <h3>How AI search is helping customers find your business</h3>
+                    <p class="blog-excerpt">Searching is evolving past conventional lists of blue links. Customers can now utilise Google AI Overviews, ChatGPT, Gemini...</p>
+                    <span class="read-more" onclick="openFullBlog(3)">Read Full Article →</span>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-content">
+                    <span class="blog-badge">Social Search Engine</span>
+                    <h3>How Gen-Z searches on TikTok, YouTube and Instagram</h3>
+                    <p class="blog-excerpt">Google remains dominant in South Africa, handling roughly 93% of traditional web searches, but younger audiences increasingly use...</p>
+                    <span class="read-more" onclick="openFullBlog(4)">Read Full Article →</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="booking-grid">
+            <div>
+                <h2 style="font-size:2.2rem; margin-bottom:20px;">Secure a Personalised Strategy Consultation</h2>
+                <p style="color:#4a5568; margin-bottom:20px;">Ready to maximize your business potential? Select a standard date placeholder below to lock in an architectural search overview with one of our specialized South African consultants.</p>
+                <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#4a5568; font-weight:600;">
+                    <li>✓ Full Organic Data and Visibility Check</li>
+                    <li>✓ Deep Competitor Gap Identification</li>
+                    <li>✓ Measurable Long-Term Strategy Mapping</li>
+                </ul>
+            </div>
+            <div class="calendar-mockup">
+                <h3 style="text-align:center; font-size:1.1rem; color:#1a202c; margin-bottom: 15px;">Available Dates</h3>
+                <div class="calendar-days">
+                    <div class="day-label">M</div><div class="day-label">T</div><div class="day-label">W</div><div class="day-label">T</div><div class="day-label">F</div><div class="day-label">S</div><div class="day-label">S</div>
+                    <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div>
+                    <div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div>
+                    <div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day selected">16</div><div class="day">17</div><div class="day">18</div>
+                </div>
+                <button class="btn btn-gradient" style="width:100%; margin-top:25px;" onclick="alert('Date slot logged! Please fill out the detailed contact form below to finalize your booking info.')">Select Date & Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Have an explicit problem with indexing parameters, search volume metrics, or E-E-A-T optimization structures? Reach out immediately.</p>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div><strong>Operational Reach:</strong> Nationwide Coverage (South Africa)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉</div>
+                    <div><strong>Digital Desk:</strong> connect@missingpiececonsultants.co.za</div>
+                </div>
+            </div>
+            <div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Form successfully transmitted! A specialist from Missing Piece Consultants will review your site strategy metrics shortly.');">
+                    <input type="text" placeholder="Contact Person Name" required>
+                    <input type="email" placeholder="Your Corporate Email Address" required>
+                    <input type="text" placeholder="Website URL (e.g., www.company.co.za)">
+                    <textarea rows="4" placeholder="How can we help increase your customer reach?" required></textarea>
+                    <button type="submit" class="btn btn-gradient">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="blogModal">
+        <div class="modal-body">
+            <span class="close-modal" onclick="closeFullBlog()">&times;</span>
+            <div id="modalContent" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script>
+        // Wix-safe database using clean standard string definitions
+        var unabridgedBlogs = {
+            1: {
+                title: "What is SEO and why do all South African businesses need it?",
+                html: "<p>SEO (Search Engine Optimisation) involves enhancing a website's content, structure, and credibility to achieve better rankings in organic search outcomes. Essentially, it allows the appropriate individuals to discover your site without incurring costs for each click.</p>" +
+                       "<h4>Effective SEO depends on three factors:</h4>" +
+                       "<ul>" +
+                           "<li><strong>Relevance:</strong> aligning with user queries.</li>" +
+                           "<li><strong>Authority:</strong> being regarded as trustworthy online.</li>" +
+                           "<li><strong>Accessibility:</strong> ensuring search engines can easily interpret your website.</li>" +
+                       "</ul>" +
+                       "<h4>SEO vs Paid Google Ads</h4>" +
+                       "<p>Organic SEO is different from paid Google Ads. SEO charges no cost per click, requires weeks to months for results, and offers lasting benefits, whereas paid ads deliver instant visibility but cease once funds are depleted. Paid ads can deliver immediate outcomes, whereas SEO establishes lasting exposure.</p>" +
+                       "<h4>The Importance of Ranking Positions</h4>" +
+                       "<p>Position in ranking is important. Roughly 28–35% of clicks are directed to position 1, whereas 15–17% go to position 2, 10–11% to position 3, and merely 2–3% to position 10. Results on the second page get under 1% of clicks.</p>" +
+                       "<h4>SEO may offer:</h4>" +
+                       "<ul>" +
+                           "<li>Continuous traffic without incurring a cost for each click.</li>" +
+                           "<li>Confidence and reliability via robust organic presence.</li>" +
+                           "<li>Customers who intend to purchase and are currently looking for products or services.</li>" +
+                           "<li>Local exposure via Google Business Profile and map placements.</li>" +
+                           "<li>Quantifiable outcomes using resources like Google Search Console and Google Analytics.</li>" +
+                           "<li>Sustained worth, since well-optimised pages can keep drawing in visitors.</li>" +
+                           "<li>Chances for small enterprises to contend by focusing on particular niches and localised searches.</li>" +
+                       "</ul>" +
+                       "<h4>The South African Digital Landscape</h4>" +
+                       "<p>South Africa has over 45 million internet users, the majority of searches occur on smartphones, and Google makes up approximately 93% of searches nationwide. This emphasises the significance of mobile optimisation, local SEO, and visibility on Google.</p>" +
+                       "<p>SEO is not a one-time effort, a quick fix, or a promise of achieving the top position. Continuous enhancement is necessary and it must consistently prioritise the actual needs of customers. Results typically require weeks to months, not just days.</p>"
+            },
+            2: {
+                title: "Reasons why your website is not getting traffic and how to fix it",
+                html: "<p>Launching a website does not automatically bring visitors. Before a page can appear in Google, it needs to be crawled, rendered, indexed and ranked. Problems at any of these stages can prevent traffic.</p>" +
+                       "<h4>1. Your website is too new</h4>" +
+                       "<p>Google needs time to discover and evaluate new websites. Submit an XML sitemap through Google Search Console and allow weeks or months for traction to develop.</p>" +
+                       "<h4>2. Google cannot crawl or index your pages</h4>" +
+                       "<p>Check for blocked robots.txt files, accidental noindex tags and pages with no internal links. Use site:yourwebsite.co.za and Google Search Console's URL Inspection tool to check indexing.</p>" +
+                       "<h4>3. Important content is hidden in JavaScript</h4>" +
+                       "<p>Important text, headings and links should be available in HTML so search engines can access and understand them.</p>" +
+                       "<h4>4. Your mobile experience is poor</h4>" +
+                       "<p>Google uses mobile-first indexing, making mobile usability particularly important in South Africa. Your key information should be easy to find and use on a phone.</p>" +
+                       "<h4>5. You are targeting the wrong keywords</h4>" +
+                       "<p>Broad terms such as "laptops" can be extremely competitive. More specific long-tail searches, such as "best affordable laptops for university students South Africa", can offer lower competition and clearer intent. Aim for relevant keywords with reasonable search volume and difficulty.</p>" +
+                       "<h4>6. Your content does not match search intent</h4>" +
+                       "<p>Searches can be informational, navigational, commercial or transactional. Content needs to match what the searcher actually wants. Check the pages already ranking for your target keyword to understand the intent.</p>" +
+                       "<h4>7. Your content is thin, copied or unhelpful</h4>" +
+                       "<p>More pages do not necessarily mean better rankings. Content should be useful, relevant and demonstrate genuine expertise. Duplicate pages should use canonical tags where appropriate.</p>" +
+                       "<h4>8. Your titles, descriptions and headings are weak</h4>" +
+                       "<p>Use unique title tags of around 50–60 characters, place the main keyword near the beginning and write useful meta descriptions of roughly 150–160 characters. Use one H1 per page and clear H2 headings.</p>" +
+                       "<h4>9. Your site is slow or technically messy</h4>" +
+                       "<p>Compress images, use modern formats such as WebP, add descriptive filenames and alt text, use HTTPS and keep URLs short and readable.</p>" +
+                       "<h4>10. Google does not yet trust you</h4>" +
+                       "<p>Build E-E-A-T through genuine experience, expertise, author credentials, case studies, contact information, an About page and reputable backlinks. Trust is particularly important for areas such as finance and health.</p>" +
+                       "<p>Other serious issues can include manual actions or algorithmic penalties caused by tactics such as buying links or keyword stuffing.</p>" +
+                       "<p><strong>A quick diagnosis should include:</strong> checking which pages are indexed, inspecting important URLs in Search Console, testing mobile speed, checking impressions versus clicks and comparing your pages with the top-ranking results. Even a well-optimised website needs time.</p>"
+            },
+            3: {
+                title: "How AI search is helping customers find your business",
+                html: "<p>Searching is evolving past conventional lists of blue links. Customers can now utilise Google AI Overviews, ChatGPT, Gemini, Microsoft Copilot, and Perplexity to pose conversational inquiries and obtain summarised responses with source links.</p>" +
+                       "<p>Conventional search typically relies on brief keywords and generates a list of websites. AI search employs more extended, conversational queries and generates a summary or a shortlist. This renders being a clear, reliable, and citable source ever more significant.</p>" +
+                       "<p>AI search offers businesses the chance to be visible for very particular inquiries. A small business that produces targeted, valuable content can compete for niche queries, while references from AI-generated responses can attract customers to the business.</p>" +
+                       "<p>AI search can also assist customers during their entire journey, from grasping their needs to evaluating choices and locating purchase points. Precise Google Business Profile details, services, operating hours, and authentic reviews are especially crucial for local enterprises.</p>" +
+                       "<p>There is no assurance that an AI system will reference a specific website, and the methods these systems use to choose sources are constantly evolving. Thus, focusing on valuable, reliable content is the most effective strategy instead of trying to exploit AI systems.</p>" +
+                       "<h4>To enhance visibility:</h4>" +
+                       "<ul>" +
+                           "<li>Establish solid SEO fundamentals: ensure your pages are crawlable, quick, optimised for mobile, and secure.</li>" +
+                           "<li>Respond to questions straightforwardly: employ question-oriented headings and place the main answer at the beginning.</li>" +
+                           "<li>Show E-E-A-T: showcase qualifications, expertise, examples, and trustworthy references.</li>" +
+                           "<li>Utilise structured data: Schema.org categories like LocalBusiness, Product, Review, Article, and FAQPage assist search engines in comprehending your content.</li>" +
+                           "<li>Incorporate unique details like regional instances, authentic statistics, images, and specialised knowledge.</li>" +
+                           "<li>Grow your brand by obtaining trustworthy backlinks, media coverage, and branded search queries.</li>" +
+                       "</ul>"
+            },
+            4: {
+                title: "How Gen-Z searches on TikTok, YouTube and Instagram",
+                html: "<p>Google remains dominant in South Africa, handling roughly 93% of traditional web searches, but younger audiences increasingly use TikTok, YouTube and Instagram to discover businesses, products, reviews and information.</p>" +
+                       "<h4>Social search attracts younger users because they desire:</h4>" +
+                       "<ul>" +
+                           "<li>Evidence: observing items and locations in the physical world.</li>" +
+                           "<li>Genuineness: true viewpoints from actual individuals.</li>" +
+                           "<li>New insights: present patterns and encounters.</li>" +
+                           "<li>Pace: brief videos that provide quick answers to inquiries.</li>" +
+                           "<li>Content suitable for mobile: straightforward videos and updates.</li>" +
+                       "</ul>" +
+                       "<h4>Searches typically divide into four types:</h4>" +
+                       "<ul>" +
+                           "<li>Evaluations: item assessments, contrasts, and unpacking videos.</li>" +
+                           "<li>Tutorials: guides and how-to instructions in steps.</li>" +
+                           "<li>Neighbourhood places: eateries, coffee shops, event spaces, and experiences.</li>" +
+                           "<li>Influence: aesthetic concepts like decoration and lifestyle imagery.</li>" +
+                       "</ul>" +
+                       "<p>Begin by exploring keywords specifically on TikTok, YouTube, and Instagram. Autocomplete recommendations show what individuals are looking for, while messages and comments can give actual inquiries from customers. Regional phrases and colloquialisms must likewise be taken into account.</p>" +
+                       "<h4>Organise videos based on search intent:</h4>" +
+                       "<ul>" +
+                           "<li><strong>Hook:</strong> State the primary keyword and guarantee within the initial three seconds.</li>" +
+                           "<li><strong>Respond first:</strong> Provide the essential details right away.</li>" +
+                           "<li><strong>Detail:</strong> Incorporate important particulars like costs, operating hours, parking availability, and advantages and disadvantages.</li>" +
+                           "<li><strong>Demonstrate it:</strong> Utilise captions and text displayed on the screen.</li>" +
+                           "<li><strong>Call to action:</strong> Urge audiences to explore, reserve, follow, or tap the link.</li>" +
+                       "</ul>" +
+                       "<p>Descriptions and captions ought to function as concise meta descriptions. Place the primary keyword and advantage early, incorporate pertinent location and business details, and conclude with a definitive call to action. Utilise some specific hashtags instead of broad ones.</p>" +
+                       "<p>For YouTube, enhance titles, thumbnails, sections, subtitles, and playlists. Place the primary keyword toward the start of the title and aim for under 60 characters.</p>" +
+                       "<p>Utilise location tags and ensure stable business names, handles, and data across TikTok, Instagram, YouTube, and Google Business Profile. Display actual employees, clients, and experiences, while steering clear of false reviews or interactions.</p>" +
+                       "<p>Social content must also link back to your website. Incorporate pertinent YouTube videos, include transcripts, utilise VideoObject structured data, and connect videos to related pages.</p>" +
+                       "<p>Monitor which videos generate search-based views and create more content around successful topics. Social media should complement rather than replace your website: social platforms are subject to changing algorithms, while your website remains a place you control for building trust and converting visitors.</p>"
+            }
+        };
+
+        function openFullBlog(id) {
+            var blog = unabridgedBlogs[id];
+            document.getElementById('modalContent').innerHTML = 
+                '<h2 style="margin-bottom:20px; color:#0f172a; font-size:1.8rem;">' + blog.title + '</h2>' +
+                '<div>' + blog.html + '</div>';
+            document.getElementById('blogModal').style.display = 'flex';
+        }
+
+        function closeFullBlog() {
+            document.getElementById('blogModal').style.display = 'none';
+        }
+
+        window.onclick = function(e) {
+            var element = document.getElementById('blogModal');
+            if (e.target == element) {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
